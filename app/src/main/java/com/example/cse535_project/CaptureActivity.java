@@ -42,8 +42,10 @@ public class CaptureActivity extends AppCompatActivity {
         super.onActivityResult(requestCode, resultCode, data);
         // Match the request 'pic id with requestCode
         if (requestCode == CAMERA_PIC_REQUEST) {
+
             // BitMap is data structure of image file which store the image in memory
             Bitmap photo = (Bitmap) data.getExtras().get("data");
+
             // Set the image in imageview for display
             imv = (ImageView) findViewById(R.id.imageView);
             imv.setImageBitmap(photo);
@@ -51,7 +53,7 @@ public class CaptureActivity extends AppCompatActivity {
             String root = Environment.getExternalStorageDirectory().toString() + "/" + Environment.DIRECTORY_DCIM + "/";
             File myDir = new File(root);
             myDir.mkdirs();
-            String fname = String.valueOf(System.currentTimeMillis())+"_image.png";
+            String fname = System.currentTimeMillis() +"_image.png";
             File file = new File(myDir, fname);
             Log.i("CAPTURE", String.valueOf(myDir));
             if (file.exists()) file.delete();
@@ -71,7 +73,7 @@ public class CaptureActivity extends AppCompatActivity {
     public void uploadToServer(View view) {
         Spinner spinner = (Spinner)findViewById(R.id.spinner);
         dropDownValue = spinner.getSelectedItem().toString();
-        if (!dropDownValue.toString().contains("Choose a category")) {
+        if (!dropDownValue.contains("Choose a category")) {
             ServerUpload();
             Intent intent = new Intent(CaptureActivity.this, MainActivity.class);
             startActivity(intent);

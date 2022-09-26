@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">CSE535-Project</string>
+    <string-array name="category">
+        <item>Choose a category</item>
+        <item>Table</item>
+        <item>Chair</item>
+        <item>Person</item>
+        <item>Wall</item>
+        <item>Laptop</item>
+    </string-array>
+</resources>

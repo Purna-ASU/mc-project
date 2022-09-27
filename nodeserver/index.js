@@ -40,7 +40,7 @@ app.post("/uploadFile",function(request,response){
       });
 })
 
-
-app.listen(80||process.env.IP||'192.168.0.64'||'192.168.0.171' ||process.env.OPENSHIFT_NODEJS_IP||'192.168.1.4', function () {
+//Add local IP address here instead of '172.20.10.7'
+app.listen(80||process.env.IP||'172.20.10.7', function () {
 console.log("Started application on ")
 });

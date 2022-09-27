@@ -5,9 +5,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".CaptureActivity">
-<!--    android:background="@drawable/background2">-->
 
     <ImageView
+        android:contentDescription="@string/preview"
         android:id="@+id/imageView"
         android:layout_width="401dp"
         android:layout_height="427dp"
@@ -33,12 +33,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="56dp"
-        android:text="Upload"
+        android:onClick="selectCategory"
+        android:text="@string/submit_msg"
         android:textColor="#FFFFFF"
+        app:backgroundTint="#8e0b3e"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        android:onClick="uploadToServer"
-        app:backgroundTint="#8e0b3e"/>
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

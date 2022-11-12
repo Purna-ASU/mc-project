@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">CSE535-Project</string>
-    <string name="welcome_msg">CSE 535 Project 1 Group 20</string>
+    <string name="welcome_msg">CSE 535 Project 2 Group 20</string>
     <string name="submit_msg">Upload</string>
     <string name="camera">Camera</string>
     <string name="preview">Image Preview</string>

@@ -33,7 +33,7 @@ import cz.msebera.android.httpclient.Header;
 @SuppressWarnings("ALL")
 public class CaptureActivity extends PreProcessImage {
     // Add local IP address here in SERVER_URL
-    public static final String SERVER_URL = "http://192.168.8.112:80";
+    public static final String SERVER_URL = "http://192.168.99.102:80";
 
     ImageView imageView;
     String finalFileName;

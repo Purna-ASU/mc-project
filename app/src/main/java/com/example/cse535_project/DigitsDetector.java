@@ -90,7 +90,6 @@ public class DigitsDetector {
     public int maxIdx(float[] array) {
         int maxIndex = 0;
         for (int i = 1; i < array.length; i++) {
-            Log.d("TAG", "Output for " + i + ": " + array[i]);
             if (array[i] > array[maxIndex]) {
                 maxIndex = i;
             }

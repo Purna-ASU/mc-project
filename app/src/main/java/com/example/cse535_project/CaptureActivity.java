@@ -33,7 +33,7 @@ import cz.msebera.android.httpclient.Header;
 @SuppressWarnings("ALL")
 public class CaptureActivity extends PreProcessImage {
     // Add local IP address here in SERVER_URL
-    public static final String SERVER_URL = "http://192.168.99.102:80";
+    public static final String SERVER_URL = "http://172.20.10.9:80";
 
     ImageView imageView;
     String finalFileName;
@@ -57,9 +57,13 @@ public class CaptureActivity extends PreProcessImage {
         if (requestCode == CAMERA_PIC_REQUEST) {
 
             Bitmap photo = (Bitmap) data.getExtras().get("data");
-            Bitmap finalImage = PreProcessImage.greyscale(photo);
+            Bitmap resizedGrayScaleImage = PreProcessImage.greyscale(photo);
+            Bitmap[] splitImagesArray = PreProcessImage.splitBitmap(resizedGrayScaleImage);
+            Bitmap quad3 = splitImagesArray[2];
+            System.out.println("Width is" + quad3.getWidth());
+            System.out.println("Height is" + quad3.getHeight());
             imageView = (ImageView) findViewById(R.id.imageView);
-            imageView.setImageBitmap(photo);
+            imageView.setImageBitmap(resizedGrayScaleImage);
             Log.i("CAPTURE", String.valueOf(imageCaptureUrl));
             String root = Environment.getExternalStorageDirectory().toString() + "/" + Environment.DIRECTORY_DCIM + "/";
             File myDir = new File(root);

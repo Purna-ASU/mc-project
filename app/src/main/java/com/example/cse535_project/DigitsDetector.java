@@ -53,12 +53,9 @@ public class DigitsDetector {
    * Load the model file from the assets folder
    */
   public int detectDigit(Bitmap bitmap) {
-      Bitmap resizedImage = Bitmap.createScaledBitmap(bitmap, width, height, true);
-      Bitmap finalImage = PreProcessImage.greyscale(resizedImage);
-      ByteBuffer byteBuffer = convertBitmapToByteBuffer(finalImage);
-
+      ByteBuffer byteBuffer = convertBitmapToByteBuffer(bitmap);
       tflite.run(byteBuffer, mnistOutput);
-
+      Log.i("OUTPUT", mnistOutput.toString());
       float[] result = mnistOutput[0];
       return maxIdx(result);
   }

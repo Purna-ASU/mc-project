@@ -18,7 +18,7 @@ import java.nio.channels.FileChannel;
 public class DigitsDetector {
 
      // Name of the file in the assets folder
-    private static final String MODEL_PATH = "mnist2.tflite";
+    private static final String MODEL_PATH = "mnist_quad3.tflite";
 
     private Interpreter tflite;
 

@@ -60,10 +60,8 @@ public class CaptureActivity extends PreProcessImage {
             Bitmap resizedGrayScaleImage = PreProcessImage.greyscale(photo);
             Bitmap[] splitImagesArray = PreProcessImage.splitBitmap(resizedGrayScaleImage);
             Bitmap quad3 = splitImagesArray[2];
-            System.out.println("Width is" + quad3.getWidth());
-            System.out.println("Height is" + quad3.getHeight());
             imageView = (ImageView) findViewById(R.id.imageView);
-            imageView.setImageBitmap(resizedGrayScaleImage);
+            imageView.setImageBitmap(quad3);
             Log.i("CAPTURE", String.valueOf(imageCaptureUrl));
             String root = Environment.getExternalStorageDirectory().toString() + "/" + Environment.DIRECTORY_DCIM + "/";
             File myDir = new File(root);
